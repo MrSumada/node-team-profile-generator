@@ -12,13 +12,43 @@ test("creates an employee object", () => {
 });
 
 describe('Employee', () => {
-    describe('getNames', () => {
+    describe('getName', () => {
         it('should retrieve a name given string', () => {
         const str = 'Hello World!';
 
-        const result = new Algo().getStats(str);
+        const result = new Employee().getStats(str);
 
-        expect(result).toEqual(str);
+        expect(result).toEBe("Hello World!");
         });
+    })
+
+    describe('getId', () => {
+        it('should retrieve an ID given number', () => {
+            const num = 1;
+
+            const result = new Employee().getId(num);
+
+            expect(result).toEqual(1);
+        })
+    })
+
+    describe('getEmail', () => {
+        it('should retrieve an email given a string', () => {
+            const str = "Adam.com";
+
+            const result = new Employee().getEmail("str");
+
+            expect(result).toBe("Adam.com");
+        })
+    })
+
+    describe('getRole', () => {
+        it('should retrieve an email given a string', () => {
+            const str = "Employee";
+
+            const result = new Employee().getRole(str);
+
+            expect(result).toBe("Employee");
+        })
     })
 })
