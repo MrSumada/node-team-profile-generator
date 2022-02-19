@@ -1,8 +1,9 @@
 header {
-    background-color: rgb(103, 175, 204);
+    background-color: #a0dbf3;
     color: black;
     text-align: center;
     display: flex;
+    border-bottom: 2px solid #4ad5e7;
 }
 
 h1 {
@@ -24,11 +25,14 @@ p {
     font-size: 18px;
 }
 
+body {
+    background-color: #c3ebff;
+}
+
 .container {
     margin: auto;
     text-align: center;
     display: flex;
-    
 }
 
 .row {
@@ -37,7 +41,7 @@ p {
 
 .card {
     margin: 20px;
-    border: 2px solid #3d3b8e;
+    border: 2px solid #4ad5e7;
     min-height: 200px;
     min-width: 150px;
     font-size: 14px;
@@ -45,6 +49,7 @@ p {
     padding-top: 12px;
     border-radius: 5px;
     flex: auto;
+    background-color: #a0dbf3;
 }
 
 .ID, .email, .office, .github, .school {
