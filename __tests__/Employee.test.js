@@ -1,17 +1,5 @@
 const Employee = require("../lib/Employee");
 
-
-// test("creates an employee object", () => {
-//     const employee = new Employee("Adam", 20, "adam@gmail.com", "Employee");
-
-//     expect(employee.name).toBe("Adam");
-//     expect(employee.ID).toEqual(expect.any(Number));
-//     expect(employee.email.length).toBeGreaterThan(0);
-//     expect(employee.role).toBe("Employee")
-
-    // expect(employee.getName()).toHaveProperty("name");
-// });
-
 describe('Employee', () => {
     describe('getName', () => {
         it('should retrieve a name given an Obj', () => {

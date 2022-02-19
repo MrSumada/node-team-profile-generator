@@ -15,7 +15,7 @@ describe('Intern', () => {
         it('should retrieve a name given an Obj', () => {
             const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-            expect(Intern.getName()).toBe("Adam");
+            expect(intern.getName()).toBe("Adam");
         });
     })
 
@@ -23,7 +23,7 @@ describe('Intern', () => {
         it('should retrieve an ID number given an Obj', () => {
             const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-            expect(Intern.getId()).toEqual(20);
+            expect(intern.getId()).toEqual(20);
         })
     })
 
@@ -31,7 +31,7 @@ describe('Intern', () => {
         it('should retrieve an email given an Obj', () => {
             const intern = new Intern ("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-            expect(Intern.getEmail()).toBe("adam@gmail.com");
+            expect(intern.getEmail()).toBe("adam@gmail.com");
         })
     })
 
@@ -39,15 +39,15 @@ describe('Intern', () => {
         it('should retrieve a school given an Obj', () => {
             const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-            expect(Intern.getSchool()).toBe("High School");
+            expect(intern.getSchool()).toBe("High School");
         })
     })
 
     describe('getRole', () => {
         it('should retrieve a role given an Obj', () => {
-            const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
+            const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Employee");
 
-            expect(Intern.getRole()).toBe("Intern");
+            expect(intern.getRole()).toBe("Intern");
         })
     })
 })

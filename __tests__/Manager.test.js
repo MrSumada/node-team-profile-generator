@@ -16,7 +16,7 @@ describe('Manager', () => {
         it('should retrieve a name given an Obj', () => {
             const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-            expect(Manager.getName()).toBe("Adam");
+            expect(manager.getName()).toBe("Adam");
         });
     })
 
@@ -24,7 +24,7 @@ describe('Manager', () => {
         it('should retrieve an ID number given an Obj', () => {
             const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-            expect(Manager.getId()).toEqual(20);
+            expect(manager.getId()).toEqual(20);
         })
     })
 
@@ -32,7 +32,7 @@ describe('Manager', () => {
         it('should retrieve an email given an Obj', () => {
             const manager = new Manager ("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-            expect(Manager.getEmail()).toBe("adam@gmail.com");
+            expect(manager.getEmail()).toBe("adam@gmail.com");
         })
     })
 
@@ -40,15 +40,15 @@ describe('Manager', () => {
         it('should retrieve an Office Number given an Obj', () => {
             const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-            expect(Manager.officeNumber).toBe("A10");
+            expect(manager.officeNumber).toBe("A10");
         })
     })
 
     describe('getRole', () => {
         it('should retrieve a role given an Obj', () => {
-            const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
+            const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Employee");
 
-            expect(Manager.getRole()).toBe("Manager");
+            expect(manager.getRole()).toBe("Manager");
         })
     })
 })
