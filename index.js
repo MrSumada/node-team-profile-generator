@@ -1,3 +1,3 @@
-const inquire = require("inquirer");
+const Prompts = require("./lib/Prompts");
 
-console.log ("hello!");
+new Prompts().initializePrompts();

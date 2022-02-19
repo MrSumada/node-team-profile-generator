@@ -1,0 +1,52 @@
+header {
+    background-color: rgb(103, 175, 204);
+    color: black;
+    text-align: center;
+    display: flex;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 200;
+    width: 100%;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    align-items: center;
+}
+
+h2, h3 {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    
+}
+
+.row {
+    justify-content: space-around;
+}
+
+.card {
+    margin: 20px;
+    border: 2px solid #3d3b8e;
+    min-height: 200px;
+    min-width: 150px;
+    font-size: 14px;
+    line-height: 23px;
+    padding-top: 12px;
+    border-radius: 5px;
+    flex: auto;
+}
+
+.ID, .email, .office, .github, .school {
+    text-align: left;
+}
