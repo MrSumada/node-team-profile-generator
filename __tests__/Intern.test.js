@@ -12,52 +12,42 @@ const Intern = require("../lib/Intern");
 
 describe('Intern', () => {
     describe('getName', () => {
-        it('should retrieve a name given string', () => {
-        const str = 'Hello World!';
+        it('should retrieve a name given an Obj', () => {
+            const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-        const result = new Intern().getStats(str);
-
-        expect(result).toEBe("Hello World!");
+            expect(Intern.getName()).toBe("Adam");
         });
     })
 
     describe('getId', () => {
-        it('should retrieve an ID given number', () => {
-            const num = 1;
+        it('should retrieve an ID number given an Obj', () => {
+            const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-            const result = new Intern().getId(num);
-
-            expect(result).toEqual(1);
+            expect(Intern.getId()).toEqual(20);
         })
     })
 
     describe('getEmail', () => {
-        it('should retrieve an email given a string', () => {
-            const str = "Adam.com";
+        it('should retrieve an email given an Obj', () => {
+            const intern = new Intern ("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-            const result = new Intern().getEmail("str");
-
-            expect(result).toBe("Adam.com");
-        })
-    })
-
-    describe('getRole', () => {
-        it('should retrieve an email given a string', () => {
-            const str = "Intern";
-
-            const result = new Intern().getRole(str);
-
-            expect(result).toBe("Intern");
+            expect(Intern.getEmail()).toBe("adam@gmail.com");
         })
     })
 
     describe('getSchool', () => {
-        it('should retrieve a school given a string', () => {
-            const str = "Random High School";
+        it('should retrieve a school given an Obj', () => {
+            const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
 
-            const result = new Intern().getGithub(str);
+            expect(Intern.getSchool()).toBe("High School");
+        })
+    })
 
-            expect(result).toBe("Random High School");
+    describe('getRole', () => {
+        it('should retrieve a role given an Obj', () => {
+            const intern = new Intern("Adam", 20, "adam@gmail.com", "High School", "Intern");
+
+            expect(Intern.getRole()).toBe("Intern");
         })
     })
 })

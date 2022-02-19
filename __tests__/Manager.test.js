@@ -1,62 +1,54 @@
 const Manager = require("../lib/Manager");
 
 
-test("creates a manager object", () => {
-    const manager = new Manager("Adam", 20, "adam@gmail.com");
+// test("creates a manager object", () => {
+//     const manager = new Manager("Adam", 20, "adam@gmail.com");
 
-    expect(manager.name).toBe("Adam");
-    expect(manager.ID).toEqual(expect.any(Number));
-    expect(manager.email.length).toBeGreaterThan(0);
-    expect(manager.office.length).toBeGreaterThan(0);
-    expect(manager.getName()).toBe("Adam");
-});
+//     expect(manager.name).toBe("Adam");
+//     expect(manager.ID).toEqual(expect.any(Number));
+//     expect(manager.email.length).toBeGreaterThan(0);
+//     expect(manager.office.length).toBeGreaterThan(0);
+//     expect(manager.getName()).toBe("Adam");
+// });
 
 describe('Manager', () => {
     describe('getName', () => {
-        it('should retrieve a name given string', () => {
-        const str = 'Hello World!';
+        it('should retrieve a name given an Obj', () => {
+            const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-        const result = new Manager().getStats(str);
-
-        expect(result).toEBe("Hello World!");
+            expect(Manager.getName()).toBe("Adam");
         });
     })
 
     describe('getId', () => {
-        it('should retrieve an ID given number', () => {
-            const num = 1;
+        it('should retrieve an ID number given an Obj', () => {
+            const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-            const result = new Manager().getId(num);
-
-            expect(result).toEqual(1);
+            expect(Manager.getId()).toEqual(20);
         })
     })
 
     describe('getEmail', () => {
-        it('should retrieve an email given a string', () => {
-            const str = "Adam.com";
+        it('should retrieve an email given an Obj', () => {
+            const manager = new Manager ("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-            const result = new Manager().getEmail("str");
+            expect(Manager.getEmail()).toBe("adam@gmail.com");
+        })
+    })
 
-            expect(result).toBe("Adam.com");
+    describe('officeNumber', () => {
+        it('should retrieve an Office Number given an Obj', () => {
+            const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
+
+            expect(Manager.officeNumber).toBe("A10");
         })
     })
 
     describe('getRole', () => {
-        it('should retrieve an email given a string', () => {
-            const str = "Engineer";
+        it('should retrieve a role given an Obj', () => {
+            const manager = new Manager("Adam", 20, "adam@gmail.com", "A10", "Manager");
 
-            const result = new Manager().getRole(str);
-
-            expect(result).toBe("Engineer");
-        })
-    })
-
-    describe('getOfficeNumber', () => {
-        it('should retrieve an office number given a string', () => {
-            const result = new Manager("Adam", 1, "fake@email.com", "A10").officeNumber.length(str);
-
-            expect(result).toBeGreaterThan(0);
+            expect(Manager.getRole()).toBe("Manager");
         })
     })
 })
