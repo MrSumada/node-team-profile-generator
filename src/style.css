@@ -37,6 +37,7 @@ body {
 
 .row {
     justify-content: space-around;
+    margin: auto;
 }
 
 .card {
