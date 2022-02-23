@@ -1,0 +1,75 @@
+header {
+    background-color: #a0dbf3;
+    color: black;
+    text-align: center;
+    display: flex;
+    border-bottom: 2px solid #4ad5e7;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 200;
+    width: 100%;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    align-items: center;
+}
+
+h2, h3 {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+p {
+    font-size: 22px;
+}
+
+li {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+ul {
+    padding-left: 0;
+}
+
+body {
+    background-color: #c3ebff;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+    display: flex;
+}
+
+.row {
+    justify-content: space-around;
+    margin: auto;
+}
+
+.card {
+    margin: 20px;
+    border: 2px solid #4ad5e7;
+    min-height: 200px;
+    min-width: 150px;
+    font-size: 14px;
+    line-height: 23px;
+    padding-top: 12px;
+    border-radius: 5px;
+    flex: auto;
+    background-color: #a0dbf3;
+}
+
+.ID, .email, .office, .github, .school {
+    text-align: left;
+}
+
+@media screen and (max-width: 991px) {
+
+    .invisible {
+        display: none;
+    }
+    
+}
