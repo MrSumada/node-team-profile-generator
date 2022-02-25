@@ -1,8 +1,6 @@
-// const Prompts = require("../lib/Prompts");
-const fs = require('fs');
-
-
 const generateHTML = function(projectArr) {
+
+    // filters to sort roles, managers will appear first, then engineers, then interns regardless of the order you input them
     const managers = projectArr.filter((a)=>{if(a.role=="Manager"){return a}});
     const engineers = projectArr.filter((b)=>{if(b.role=="Engineer"){return b}});
     const interns = projectArr.filter((c)=>{if(c.role=="Intern"){return c}});
@@ -14,7 +12,7 @@ const generateHTML = function(projectArr) {
                 <article class="card col-lg-3 col-m-6 col-sm-12">
                     <div class="card-heading manager">
                         <h3>${managers[i].name}</h3>
-                        <p><span class="material-icons">coffee</span> : ${managers[i].role}</p>
+                        <p class="d-flex align-items-center justify-content-center"><span class="material-icons">coffee</span> : ${managers[i].role}</p>
                     </div>
                     <div class="card-body">
                         <ul>
@@ -31,13 +29,13 @@ const generateHTML = function(projectArr) {
                 <article class="card col-lg-3 col-m-6 col-sm-12">
                     <div class="card-heading engineer">
                         <h3>${engineers[i].name}</h3>
-                        <p><span class="material-icons">engineering</span> : ${engineers[i].role}</p>
+                        <p class="d-flex align-items-center justify-content-center"><span class="material-icons">engineering</span> : ${engineers[i].role}</p>
                     </div>
                     <div class="card-body">
                         <ul>
                             <li class="ID">ID: ${engineers[i].ID}</li>
                             <li class="email">Email: <a href=mailto:${engineers[i].email}>${engineers[i].email}</a></li>
-                            <li class="github">Github: <a href=https://github.com/${engineers[i].github}>{engineers[i].github}</a></li>
+                            <li class="github">Github: <a href=https://github.com/${engineers[i].github}>${engineers[i].github}</a></li>
                         </ul>
                     </div>
                 </article>
@@ -48,37 +46,24 @@ const generateHTML = function(projectArr) {
                 <article class="card col-lg-3 col-m-6 col-sm-12">
                     <div class="card-heading intern">
                         <h3>${interns[i].name}</h3>
-                        <p><span class="material-icons">school</span> : ${interns[i].role}</p>
+                        <p class="d-flex align-items-center justify-content-center"><span class="material-icons">school</span> : ${interns[i].role}</p>
                     </div>
                     <div class="card-body">
                         <ul>
                             <li class="ID">ID: ${interns[i].ID}</li>
-                            <li class="email">Email: <a href=mailto:${managers[i].email}>${managers[i].email}</a></li>
+                            <li class="email">Email: <a href=mailto:${interns[i].email}>${interns[i].email}</a></li>
                             <li class="school">School: ${interns[i].school}</li>
                         </ul>
                     </div>
                 </article>
             `
     }
-    // add invisible cards so large veiwports will have nicer columns
-    if (projectArr.length % 3 === 1 || projectArr.length % 3 === 2) {
-        newArticle += `
-        <article class="card invisible col-lg-3 col-m-6 col-sm-12">
-                    <div class="card-heading intern">
-                        <h3></h3>
-                        <p></p>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li class="ID"></li>
-                            <li class="email"></li>
-                            <li class="school"></li>
-                        </ul>
-                    </div>
-                </article>`
-    }
+    // add invisible cards so large veiwports will have nicer columns, 1 or 2 cards added to allow for 3 cards per row
+    // Using %, second invisible card added if 2 cards required. 3 - projectArr.length %3 will always be 1 or 2 here. 
+    // for example: 4 employees would get two extra cards for six cards in the row.  Multiples of 3 look nicest.
 
-    if (projectArr.length % 3 === 2) {
+    if (projectArr.length % 3 !== 0) {
+        for (var i = 0; i < (3 - projectArr.length % 3); i++) {
         newArticle += `
         <article class="card invisible col-lg-3 col-m-6 col-sm-12">
                     <div class="card-heading intern">
@@ -93,6 +78,7 @@ const generateHTML = function(projectArr) {
                         </ul>
                     </div>
                 </article>`
+        }
     }
 
     return generateHTMLAll(newArticle);
