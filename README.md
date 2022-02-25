@@ -21,8 +21,9 @@ Clone the repo, use the npm install command, and then just launch with node inde
 
 Follow the video for a quick walkthrough of the creator in action: https://drive.google.com/file/d/13Llgb_iGzaWAf89J2O9bXc7hjeMQsews/view
 
+
 ## Example
-An example of the HTML can be found here: https://mrsumada.github.io/node-team-profile-generator/
+An example of the HTML can be found here: https://drive.google.com/file/d/1kMxneOb5bvhYR-CJW7icQzTqw74tSr2e/view
 
 
 ## Questions?
