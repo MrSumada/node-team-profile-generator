@@ -51,6 +51,7 @@ ul {
 .container {
     margin: auto;
     text-align: center;
+    display: flex;
 }
 
 .row {
@@ -62,6 +63,7 @@ ul {
     margin: 20px 10px;
     border: 2px solid var(--border-highlight);
     min-height: 200px;
+    min-width: 200px;
     font-size: 14px;
     overflow-wrap: break-word;
     padding-top: 12px;
