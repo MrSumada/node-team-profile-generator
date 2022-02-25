@@ -77,3 +77,20 @@ ul {
 .ID, .email, .office, .github, .school {
     text-align: left;
 }
+
+@media screen and (max-width: 991px) {
+
+    p, ul {
+        font-size: 24px;
+        line-height: 35px;
+    }
+
+    ul {
+        margin-left: 75px;
+        margin-right: 75px;;
+    }
+
+    .invisible {
+        display: none;
+    }
+}
